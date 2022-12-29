@@ -1,0 +1,17 @@
+{%extends 'testapp/homepage.html'%}
+{%load static %}
+{%block content%}
+
+<div class="jumbotron jumbotron-fluid" >
+  <div class="container"style="margin-left:500px">
+    <table>
+    <form  method="post">
+    {{mykey.as_table}}
+    {%csrf_token%}
+     </table>
+     <button type="submit" name="button" class="btn btn-success" style="margin-left:110px" style="margin-top:50px">Signup</button>
+    </form>
+  </div>
+</div>
+
+{%endblock%}

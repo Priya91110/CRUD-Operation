@@ -1,0 +1,23 @@
+{%extends 'testapp/homepage.html'%}
+{%load static %}
+{%block content%}
+<div class="table-responsive">
+      <table class="table">
+        {% if students %}
+        <tr>
+          <th>SNo.</th><th>RollNo.</th><th>Name</th><th>Marks</th><th>Address</th><th colspan="5">Action</th>
+        </tr>
+        {%for i in students%}
+        <tr>
+        <td>{{forloop.counter}}</td><td>{{i.sroll}}</td><td>{{i.sname}}</td><td>{{i.smarks}}</td><td>{{i.sadd}}</td>
+        <td><a href="/studentdelete/{{i.id}}" type="button" class="btn btn-danger" name="button">{{i.id}}Delete</a></td><td></td>
+        <td><a href="/studentupdate/{{i.id}}" type="button" class="btn btn-success" name="button">{{i.id}}Update</a></td><td></td>
+
+        </tr><br>
+        {%endfor%}
+      </table>
+  {%else%}
+  No Record Found
+  {%endif%}
+</div>
+{%endblock%}
